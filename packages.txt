@@ -1,0 +1,2 @@
+build-essential
+liblz4-dev
