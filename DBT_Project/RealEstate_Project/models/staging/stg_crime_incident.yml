@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: stg_crime_incident
+    columns:
+      - name: INCIDENT_ID
+        tests:
+          - UNIQUE
+          - not_null

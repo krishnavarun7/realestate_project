@@ -1,0 +1,12 @@
+sources:
+  - name: realestate
+    database: dataexpert_student
+    schema: "{{ target.schema }}"
+    tables:
+      - name: RAW_CRIME_AGENCIES
+      - name: RAW_CRIME_INCIDENT
+      - name: CRIME_OFFENSE
+      - name: CRIME_OFFENSE_TYPE
+      - name: FIN_HHI
+      - name: FIN_HOUSING_COST
+      - name: DIM_COUNTY

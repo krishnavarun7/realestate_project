@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: dim_crime
+    columns:
+      - name: incident_id
+        tests:
+          - unique
+          - not_null

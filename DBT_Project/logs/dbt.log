@@ -1,0 +1,775 @@
+[0m14:18:26.269605 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000209694D5400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002096759C410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002096A136C10>]}
+
+
+============================== 14:18:26.291705 | ca54fb6b-aed8-4c93-a906-668be2b9c312 ==============================
+[0m14:18:26.291705 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:18:26.292405 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\sarma\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:18:26.310989 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m14:18:26.311525 [info ] [MainThread]: python version: 3.13.2
+[0m14:18:26.311813 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m14:18:26.312069 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:18:31.048279 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\.dbt
+[0m14:18:31.048958 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\.dbt\profiles.yml
+[0m14:18:31.049556 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m14:18:31.051517 [info ] [MainThread]: adapter type: snowflake
+[0m14:18:31.052457 [info ] [MainThread]: adapter version: 1.8.4
+[0m14:18:31.053251 [info ] [MainThread]: Configuration:
+[0m14:18:31.053957 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:18:31.054430 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:18:31.054942 [info ] [MainThread]: Required dependencies:
+[0m14:18:31.055772 [debug] [MainThread]: Executing "git --help"
+[0m14:18:31.088783 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:18:31.089264 [debug] [MainThread]: STDERR: "b''"
+[0m14:18:31.089597 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:18:31.090124 [info ] [MainThread]: Connection:
+[0m14:18:31.090531 [info ] [MainThread]:   account: aab46027.us-west-2
+[0m14:18:31.090992 [info ] [MainThread]:   user: dataexpert_student
+[0m14:18:31.091310 [info ] [MainThread]:   database: DATAEXPERT_STUDENT
+[0m14:18:31.091643 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m14:18:31.091940 [info ] [MainThread]:   role: ALL_USERS_ROLE
+[0m14:18:31.092256 [info ] [MainThread]:   schema: VARUN_PROJECT
+[0m14:18:31.092546 [info ] [MainThread]:   authenticator: None
+[0m14:18:31.092878 [info ] [MainThread]:   oauth_client_id: None
+[0m14:18:31.093207 [info ] [MainThread]:   query_tag: VARUN_PROJECT
+[0m14:18:31.093519 [info ] [MainThread]:   client_session_keep_alive: False
+[0m14:18:31.093799 [info ] [MainThread]:   host: None
+[0m14:18:31.094103 [info ] [MainThread]:   port: None
+[0m14:18:31.094382 [info ] [MainThread]:   proxy_host: None
+[0m14:18:31.094626 [info ] [MainThread]:   proxy_port: None
+[0m14:18:31.094858 [info ] [MainThread]:   protocol: None
+[0m14:18:31.095093 [info ] [MainThread]:   connect_retries: 0
+[0m14:18:31.095400 [info ] [MainThread]:   connect_timeout: 10
+[0m14:18:31.095718 [info ] [MainThread]:   retry_on_database_errors: False
+[0m14:18:31.096012 [info ] [MainThread]:   retry_all: False
+[0m14:18:31.096339 [info ] [MainThread]:   insecure_mode: False
+[0m14:18:31.096615 [info ] [MainThread]:   reuse_connections: True
+[0m14:18:31.097083 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m14:18:31.240188 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m14:18:31.240746 [debug] [MainThread]: Using snowflake connection "debug"
+[0m14:18:31.240933 [debug] [MainThread]: On debug: select 1 as id
+[0m14:18:31.241096 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:18:32.461562 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.220 seconds
+[0m14:18:32.463318 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:18:32.464902 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:18:32.465993 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml> not found
+
+[0m14:18:32.467615 [debug] [MainThread]: Command `dbt debug` failed at 14:18:32.467367 after 6.52 seconds
+[0m14:18:32.468192 [debug] [MainThread]: Connection 'debug' was left open.
+[0m14:18:32.468716 [debug] [MainThread]: On debug: Close
+[0m14:18:32.677076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002096C1D6EA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002096C215EB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002096C1667A0>]}
+[0m14:18:32.677925 [debug] [MainThread]: Flushing usage events
+[0m14:18:32.931002 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:22:11.759040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015AF0459010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015AEE5AC2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015AF10A2710>]}
+
+
+============================== 14:22:11.764364 | 020fcdde-3236-4b38-8491-0c808849679f ==============================
+[0m14:22:11.764364 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:22:11.765403 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init RealEstate_Project', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:22:11.784492 [debug] [MainThread]: Starter project path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Lib\site-packages\dbt\include\starter_project
+[0m14:22:11.818678 [info ] [MainThread]: 
+Your new dbt project "RealEstate_Project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:22:11.819474 [info ] [MainThread]: Setting up your profile.
+[0m14:24:16.601394 [info ] [MainThread]: Profile RealEstate_Project written to C:\Users\sarma\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:24:16.603103 [debug] [MainThread]: Command `dbt init` succeeded at 14:24:16.602853 after 125.11 seconds
+[0m14:24:16.603771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015AF308E3F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015AF09F30B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015AF30ADAE0>]}
+[0m14:24:16.604485 [debug] [MainThread]: Flushing usage events
+[0m14:24:16.864194 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:34:49.270507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000169C02F9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000169BE3E82D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000169C0F42710>]}
+
+
+============================== 14:34:49.275513 | bdd75c3a-c54c-4912-a552-40a4741c0682 ==============================
+[0m14:34:49.275513 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:34:49.276257 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\sarma\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m14:34:49.292224 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m14:34:49.292820 [info ] [MainThread]: python version: 3.13.2
+[0m14:34:49.293194 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m14:34:49.293511 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:34:49.553555 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\.dbt
+[0m14:34:49.554317 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\.dbt\profiles.yml
+[0m14:34:49.555084 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m14:34:49.555755 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m14:34:49.556710 [debug] [MainThread]: Command `dbt debug` failed at 14:34:49.556589 after 0.57 seconds
+[0m14:34:49.557032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000169C2FC8050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000169C2FA5010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000169C2EF5BF0>]}
+[0m14:34:49.557377 [debug] [MainThread]: Flushing usage events
+[0m14:34:49.848378 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:36:22.279642 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A6367B9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A6348A82D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A637412710>]}
+
+
+============================== 14:36:22.283555 | 49fdf2e7-f0ff-4d6a-8b9e-c41d56197610 ==============================
+[0m14:36:22.283555 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:36:22.284328 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\profiles.yml', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m14:36:22.303845 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m14:36:22.304505 [info ] [MainThread]: python version: 3.13.2
+[0m14:36:22.304858 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m14:36:22.305225 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:36:22.305597 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m14:36:22.305969 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml
+[0m14:36:22.306329 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m14:36:22.306709 [info ] [MainThread]: Configuration:
+[0m14:36:22.307053 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m14:36:22.307475 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:36:22.307818 [info ] [MainThread]: Required dependencies:
+[0m14:36:22.308410 [debug] [MainThread]: Executing "git --help"
+[0m14:36:22.337976 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:36:22.338847 [debug] [MainThread]: STDERR: "b''"
+[0m14:36:22.339595 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:36:22.340177 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m14:36:22.340618 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m14:36:22.340964 [info ] [MainThread]: dbt looked for a profiles.yml file in C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m14:36:22.341338 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml> not found
+
+[0m14:36:22.341994 [debug] [MainThread]: Command `dbt debug` failed at 14:36:22.341886 after 0.31 seconds
+[0m14:36:22.342341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A6379128B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A63781DC70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A637767CE0>]}
+[0m14:36:22.342624 [debug] [MainThread]: Flushing usage events
+[0m14:36:22.613391 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:37:35.044172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43D779010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43B8682D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43E3DE710>]}
+
+
+============================== 14:37:35.048544 | ca2989ee-6ac5-4aa0-b966-0e6b030da5a0 ==============================
+[0m14:37:35.048544 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:37:35.049317 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\profiles.yml', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:37:35.065137 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m14:37:35.065900 [info ] [MainThread]: python version: 3.13.2
+[0m14:37:35.066290 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m14:37:35.066661 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:37:35.066998 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m14:37:35.067324 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml
+[0m14:37:35.067684 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m14:37:35.136477 [info ] [MainThread]: Configuration:
+[0m14:37:35.137248 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m14:37:35.137814 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:37:35.138137 [info ] [MainThread]: Required dependencies:
+[0m14:37:35.138673 [debug] [MainThread]: Executing "git --help"
+[0m14:37:35.166532 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:37:35.167012 [debug] [MainThread]: STDERR: "b''"
+[0m14:37:35.167328 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:37:35.167846 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m14:37:35.168202 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:37:35.168523 [info ] [MainThread]: dbt looked for a profiles.yml file in C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m14:37:35.169541 [debug] [MainThread]: Command `dbt debug` failed at 14:37:35.169439 after 0.31 seconds
+[0m14:37:35.169833 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43EA262C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43EA696D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F43E737AC0>]}
+[0m14:37:35.170186 [debug] [MainThread]: Flushing usage events
+[0m14:37:35.438919 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:38:39.666035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208FC169010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208FA2BC2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208FCDB2710>]}
+
+
+============================== 14:38:39.670281 | 51703522-eb5b-428d-ba57-1ffa9f3e336c ==============================
+[0m14:38:39.670281 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:38:39.671169 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\profiles.yml', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m14:38:39.686606 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m14:38:39.687475 [info ] [MainThread]: python version: 3.13.2
+[0m14:38:39.688124 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m14:38:39.688466 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:38:39.688942 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m14:38:39.689323 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml
+[0m14:38:39.689756 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m14:38:39.690160 [info ] [MainThread]: Configuration:
+[0m14:38:39.690567 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m14:38:39.690941 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:38:39.691274 [info ] [MainThread]: Required dependencies:
+[0m14:38:39.691632 [debug] [MainThread]: Executing "git --help"
+[0m14:38:39.718963 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:38:39.719368 [debug] [MainThread]: STDERR: "b''"
+[0m14:38:39.719668 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:38:39.720149 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m14:38:39.720546 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m14:38:39.720869 [info ] [MainThread]: dbt looked for a profiles.yml file in C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m14:38:39.721162 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml> not found
+
+[0m14:38:39.721729 [debug] [MainThread]: Command `dbt debug` failed at 14:38:39.721635 after 0.25 seconds
+[0m14:38:39.722003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208FD2B28B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208FD1BDC70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000208FD107CE0>]}
+[0m14:38:39.722334 [debug] [MainThread]: Flushing usage events
+[0m14:38:39.975810 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:39:10.939102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000292E7489010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000292E557C2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000292E80E2710>]}
+
+
+============================== 14:39:10.943318 | c47e5eee-f14b-47ee-bab2-55eb726cc8a2 ==============================
+[0m14:39:10.943318 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:39:10.944140 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m14:39:10.960536 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m14:39:10.961135 [info ] [MainThread]: python version: 3.13.2
+[0m14:39:10.961427 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m14:39:10.961683 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:39:11.221051 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project
+[0m14:39:11.221907 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m14:39:11.222402 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m14:39:11.223798 [info ] [MainThread]: adapter type: snowflake
+[0m14:39:11.224332 [info ] [MainThread]: adapter version: 1.8.4
+[0m14:39:11.224813 [info ] [MainThread]: Configuration:
+[0m14:39:11.225228 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:39:11.225753 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:39:11.226529 [info ] [MainThread]: Required dependencies:
+[0m14:39:11.227213 [debug] [MainThread]: Executing "git --help"
+[0m14:39:11.256088 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:39:11.256622 [debug] [MainThread]: STDERR: "b''"
+[0m14:39:11.256945 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:39:11.257415 [info ] [MainThread]: Connection:
+[0m14:39:11.257774 [info ] [MainThread]:   account: aab46027.us-west-2
+[0m14:39:11.258229 [info ] [MainThread]:   user: dataexpert_student
+[0m14:39:11.258809 [info ] [MainThread]:   database: DATAEXPERT_STUDENT
+[0m14:39:11.259339 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m14:39:11.259777 [info ] [MainThread]:   role: ALL_USERS_ROLE
+[0m14:39:11.260090 [info ] [MainThread]:   schema: VARUN_PROJECT
+[0m14:39:11.260379 [info ] [MainThread]:   authenticator: None
+[0m14:39:11.260621 [info ] [MainThread]:   oauth_client_id: None
+[0m14:39:11.260856 [info ] [MainThread]:   query_tag: VARUN_PROJECT
+[0m14:39:11.261089 [info ] [MainThread]:   client_session_keep_alive: False
+[0m14:39:11.261315 [info ] [MainThread]:   host: None
+[0m14:39:11.261555 [info ] [MainThread]:   port: None
+[0m14:39:11.261838 [info ] [MainThread]:   proxy_host: None
+[0m14:39:11.262115 [info ] [MainThread]:   proxy_port: None
+[0m14:39:11.262433 [info ] [MainThread]:   protocol: None
+[0m14:39:11.262812 [info ] [MainThread]:   connect_retries: 0
+[0m14:39:11.263090 [info ] [MainThread]:   connect_timeout: 10
+[0m14:39:11.263372 [info ] [MainThread]:   retry_on_database_errors: False
+[0m14:39:11.263631 [info ] [MainThread]:   retry_all: False
+[0m14:39:11.263865 [info ] [MainThread]:   insecure_mode: False
+[0m14:39:11.264099 [info ] [MainThread]:   reuse_connections: True
+[0m14:39:11.264568 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m14:39:11.424604 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m14:39:11.425191 [debug] [MainThread]: Using snowflake connection "debug"
+[0m14:39:11.425414 [debug] [MainThread]: On debug: select 1 as id
+[0m14:39:11.425585 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:39:12.283996 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.858 seconds
+[0m14:39:12.285673 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:39:12.287063 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:39:12.287999 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml> not found
+
+[0m14:39:12.289095 [debug] [MainThread]: Command `dbt debug` failed at 14:39:12.288953 after 1.51 seconds
+[0m14:39:12.289459 [debug] [MainThread]: Connection 'debug' was left open.
+[0m14:39:12.289761 [debug] [MainThread]: On debug: Close
+[0m14:39:12.518460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000292EA2803E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000292EA141490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000292EA09A470>]}
+[0m14:39:12.519361 [debug] [MainThread]: Flushing usage events
+[0m14:39:12.765865 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:39:35.401710 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015ED3E59010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015ED1F4C2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015ED4AA2710>]}
+
+
+============================== 14:39:35.407821 | ff2491d3-3506-49b5-8556-c8d9316d85b9 ==============================
+[0m14:39:35.407821 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:39:35.408932 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:39:35.429149 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m14:39:35.429851 [info ] [MainThread]: python version: 3.13.2
+[0m14:39:35.430470 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m14:39:35.431184 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:39:35.434194 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project
+[0m14:39:35.434641 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m14:39:35.435002 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m14:39:35.503655 [info ] [MainThread]: Configuration:
+[0m14:39:35.504401 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m14:39:35.504885 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:39:35.505178 [info ] [MainThread]: Required dependencies:
+[0m14:39:35.505452 [debug] [MainThread]: Executing "git --help"
+[0m14:39:35.532041 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:39:35.532508 [debug] [MainThread]: STDERR: "b''"
+[0m14:39:35.532805 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:39:35.533300 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m14:39:35.533682 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:39:35.534035 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'RealEstate_Project'
+
+
+[0m14:39:35.534772 [debug] [MainThread]: Command `dbt debug` failed at 14:39:35.534662 after 0.32 seconds
+[0m14:39:35.535065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015ED51962C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015ED51D96D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015ED4DF7AC0>]}
+[0m14:39:35.535366 [debug] [MainThread]: Flushing usage events
+[0m14:39:35.812362 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:43:37.904309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002181FBE9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002181DCDC2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021820832710>]}
+
+
+============================== 14:43:37.910994 | 2f3c2ccd-fcdf-4cb6-b2da-1df8ec768ae1 ==============================
+[0m14:43:37.910994 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:43:37.912282 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project', 'debug': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:43:37.928979 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m14:43:37.930167 [info ] [MainThread]: python version: 3.13.2
+[0m14:43:37.931031 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m14:43:37.931494 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:43:37.934883 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project
+[0m14:43:37.935354 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m14:43:37.935657 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m14:43:37.997726 [info ] [MainThread]: Configuration:
+[0m14:43:37.998569 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m14:43:37.999155 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:43:37.999699 [info ] [MainThread]: Required dependencies:
+[0m14:43:38.000353 [debug] [MainThread]: Executing "git --help"
+[0m14:43:38.028880 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:43:38.029301 [debug] [MainThread]: STDERR: "b''"
+[0m14:43:38.029690 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:43:38.030235 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m14:43:38.030629 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:43:38.031010 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'RealEstate_Project'
+
+
+[0m14:43:38.031629 [debug] [MainThread]: Command `dbt debug` failed at 14:43:38.031534 after 0.42 seconds
+[0m14:43:38.031916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021820F562C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021820F956D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021820B87AC0>]}
+[0m14:43:38.032261 [debug] [MainThread]: Flushing usage events
+[0m14:43:38.308223 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:44:06.309587 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270766A9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270747982D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027077302710>]}
+
+
+============================== 14:44:06.314630 | 85931414-ff18-459b-9baa-1215422b9164 ==============================
+[0m14:44:06.314630 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m14:44:06.315812 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:44:06.330168 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m14:44:06.331201 [info ] [MainThread]: python version: 3.13.2
+[0m14:44:06.331783 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m14:44:06.332264 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:44:06.605672 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project
+[0m14:44:06.606951 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m14:44:06.607846 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m14:44:06.609700 [info ] [MainThread]: adapter type: snowflake
+[0m14:44:06.610237 [info ] [MainThread]: adapter version: 1.8.4
+[0m14:44:06.685605 [info ] [MainThread]: Configuration:
+[0m14:44:06.686842 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:44:06.687777 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:44:06.688240 [info ] [MainThread]: Required dependencies:
+[0m14:44:06.688798 [debug] [MainThread]: Executing "git --help"
+[0m14:44:06.718329 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:44:06.719047 [debug] [MainThread]: STDERR: "b''"
+[0m14:44:06.719408 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:44:06.719922 [info ] [MainThread]: Connection:
+[0m14:44:06.720332 [info ] [MainThread]:   account: aab46027.us-west-2
+[0m14:44:06.720661 [info ] [MainThread]:   user: dataexpert_student
+[0m14:44:06.721003 [info ] [MainThread]:   database: DATAEXPERT_STUDENT
+[0m14:44:06.721351 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m14:44:06.721703 [info ] [MainThread]:   role: ALL_USERS_ROLE
+[0m14:44:06.721962 [info ] [MainThread]:   schema: VARUN_PROJECT
+[0m14:44:06.722207 [info ] [MainThread]:   authenticator: None
+[0m14:44:06.722470 [info ] [MainThread]:   oauth_client_id: None
+[0m14:44:06.722758 [info ] [MainThread]:   query_tag: VARUN_PROJECT
+[0m14:44:06.723006 [info ] [MainThread]:   client_session_keep_alive: False
+[0m14:44:06.723241 [info ] [MainThread]:   host: None
+[0m14:44:06.723482 [info ] [MainThread]:   port: None
+[0m14:44:06.723716 [info ] [MainThread]:   proxy_host: None
+[0m14:44:06.724138 [info ] [MainThread]:   proxy_port: None
+[0m14:44:06.724522 [info ] [MainThread]:   protocol: None
+[0m14:44:06.724855 [info ] [MainThread]:   connect_retries: 0
+[0m14:44:06.725171 [info ] [MainThread]:   connect_timeout: 10
+[0m14:44:06.725464 [info ] [MainThread]:   retry_on_database_errors: False
+[0m14:44:06.725728 [info ] [MainThread]:   retry_all: False
+[0m14:44:06.725998 [info ] [MainThread]:   insecure_mode: False
+[0m14:44:06.726387 [info ] [MainThread]:   reuse_connections: True
+[0m14:44:06.727362 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m14:44:06.875627 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m14:44:06.876213 [debug] [MainThread]: Using snowflake connection "debug"
+[0m14:44:06.876423 [debug] [MainThread]: On debug: select 1 as id
+[0m14:44:06.876596 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:44:07.679406 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.803 seconds
+[0m14:44:07.680973 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:44:07.681960 [info ] [MainThread]: [32mAll checks passed![0m
+[0m14:44:07.683175 [debug] [MainThread]: Command `dbt debug` succeeded at 14:44:07.682982 after 1.55 seconds
+[0m14:44:07.683465 [debug] [MainThread]: Connection 'debug' was left open.
+[0m14:44:07.683682 [debug] [MainThread]: On debug: Close
+[0m14:44:07.888813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270793BFE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270794F0290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270792E6580>]}
+[0m14:44:07.889828 [debug] [MainThread]: Flushing usage events
+[0m14:44:08.065114 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:46:48.545765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001763C8F9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001763AA1C2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001763D542710>]}
+
+
+============================== 16:46:48.553210 | ea223821-cb20-4045-a350-80d0014b5f9d ==============================
+[0m16:46:48.553210 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:46:48.554335 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:46:48.579446 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:46:48.580264 [info ] [MainThread]: python version: 3.13.2
+[0m16:46:48.580796 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:46:48.581264 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:46:48.587069 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DBT_SCHEMA'
+[0m16:46:48.588065 [debug] [MainThread]: Command `dbt debug` failed at 16:46:48.587947 after 0.28 seconds
+[0m16:46:48.588451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001763DA3F950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001763DAC6E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001763DAB2BE0>]}
+[0m16:46:48.588845 [debug] [MainThread]: Flushing usage events
+[0m16:46:48.866329 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:47:55.379661 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3CAA79010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3C8B682D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3CB6DE710>]}
+
+
+============================== 16:47:55.384301 | 8b5dd52f-c7d5-480a-8a93-1b903de0d1bf ==============================
+[0m16:47:55.384301 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:47:55.385186 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m16:47:55.400457 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:47:55.401161 [info ] [MainThread]: python version: 3.13.2
+[0m16:47:55.401471 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:47:55.401749 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:47:55.407268 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DBT_SCHEMA'
+[0m16:47:55.408009 [debug] [MainThread]: Command `dbt debug` failed at 16:47:55.407913 after 0.19 seconds
+[0m16:47:55.408260 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3CBBDF950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3CBC62E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3CBC4EBE0>]}
+[0m16:47:55.408522 [debug] [MainThread]: Flushing usage events
+[0m16:47:55.662205 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:49:12.180844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B606E49010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B604F482D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B607A9E710>]}
+
+
+============================== 16:49:12.184750 | b855521b-2bbd-43f8-b4ba-ff2c156bc9fc ==============================
+[0m16:49:12.184750 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:49:12.185504 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m16:49:12.198202 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:49:12.198919 [info ] [MainThread]: python version: 3.13.2
+[0m16:49:12.199386 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:49:12.199791 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:49:12.206320 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DBT_SCHEMA'
+[0m16:49:12.207704 [debug] [MainThread]: Command `dbt debug` failed at 16:49:12.207591 after 0.18 seconds
+[0m16:49:12.208225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B607F9F950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B608022E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B60800EBE0>]}
+[0m16:49:12.208626 [debug] [MainThread]: Flushing usage events
+[0m16:49:12.486273 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:50:03.283078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002281BBE9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022819D282D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002281C83E710>]}
+
+
+============================== 16:50:03.287509 | a8f143ec-c12b-4c4e-8dea-0005292afed9 ==============================
+[0m16:50:03.287509 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:50:03.288382 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\sarma\\.dbt', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt clean', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:50:03.367761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a8f143ec-c12b-4c4e-8dea-0005292afed9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002281C2210F0>]}
+[0m16:50:03.386137 [debug] [MainThread]: Command `dbt clean` succeeded at 16:50:03.386043 after 0.24 seconds
+[0m16:50:03.386387 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002281CB97F00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002281CB97790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002281CE75A50>]}
+[0m16:50:03.386630 [debug] [MainThread]: Flushing usage events
+[0m16:50:03.589143 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:50:08.800345 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F89C3F9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F89A4EC2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F89D03E710>]}
+
+
+============================== 16:50:08.804739 | bb8b8731-4817-4fba-81dd-80938484fb98 ==============================
+[0m16:50:08.804739 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:50:08.805803 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:50:08.820944 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:50:08.821669 [info ] [MainThread]: python version: 3.13.2
+[0m16:50:08.822096 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:50:08.822633 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:50:08.828805 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DBT_SCHEMA'
+[0m16:50:08.829719 [debug] [MainThread]: Command `dbt debug` failed at 16:50:08.829613 after 0.17 seconds
+[0m16:50:08.830274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F89D53F950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F89D5C2E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F89D5AEBE0>]}
+[0m16:50:08.830596 [debug] [MainThread]: Flushing usage events
+[0m16:50:09.029149 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:52:51.200750 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B7B4B9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B795AC2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B7C112710>]}
+
+
+============================== 16:52:51.205958 | b7d2110a-2b69-4817-a367-4009b9fb8a3f ==============================
+[0m16:52:51.205958 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:52:51.207084 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\profiles.yml', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m16:52:51.220200 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:52:51.220929 [info ] [MainThread]: python version: 3.13.2
+[0m16:52:51.221675 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:52:51.222364 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:52:51.222984 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m16:52:51.223590 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml
+[0m16:52:51.224181 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m16:52:51.290057 [info ] [MainThread]: Configuration:
+[0m16:52:51.291081 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m16:52:51.291760 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m16:52:51.292415 [info ] [MainThread]: Required dependencies:
+[0m16:52:51.293270 [debug] [MainThread]: Executing "git --help"
+[0m16:52:51.321152 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:52:51.322225 [debug] [MainThread]: STDERR: "b''"
+[0m16:52:51.322619 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:52:51.323142 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m16:52:51.323485 [info ] [MainThread]: [31m1 check failed:[0m
+[0m16:52:51.323795 [info ] [MainThread]: dbt looked for a profiles.yml file in C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m16:52:51.324429 [debug] [MainThread]: Command `dbt debug` failed at 16:52:51.324337 after 0.35 seconds
+[0m16:52:51.324703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B7C7562C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B7C7996D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B7C467AC0>]}
+[0m16:52:51.325093 [debug] [MainThread]: Flushing usage events
+[0m16:52:51.605138 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:54:08.618558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DA0AF49010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DA090342D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DA0BBB2710>]}
+
+
+============================== 16:54:08.622686 | 1ed4f1fc-832f-4ef0-b6ed-c2054025a62e ==============================
+[0m16:54:08.622686 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:54:08.623491 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:54:08.636751 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:54:08.637413 [info ] [MainThread]: python version: 3.13.2
+[0m16:54:08.637817 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:54:08.638155 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:54:08.643966 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DBT_SCHEMA'
+[0m16:54:08.644741 [debug] [MainThread]: Command `dbt debug` failed at 16:54:08.644642 after 0.20 seconds
+[0m16:54:08.644989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DA0C0AF950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DA0C132E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DA0C11F130>]}
+[0m16:54:08.645247 [debug] [MainThread]: Flushing usage events
+[0m16:54:08.894425 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:54:20.829676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000196A5549010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000196A363C2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000196A6192710>]}
+
+
+============================== 16:54:20.833570 | a75dd487-8b2f-446a-a818-23dd2a851c61 ==============================
+[0m16:54:20.833570 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:54:20.834537 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:54:20.848046 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:54:20.848687 [info ] [MainThread]: python version: 3.13.2
+[0m16:54:20.849255 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:54:20.849738 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:54:20.855523 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DBT_SCHEMA'
+[0m16:54:20.856453 [debug] [MainThread]: Command `dbt debug` failed at 16:54:20.856349 after 0.16 seconds
+[0m16:54:20.856854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000196A668F950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000196A6712E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000196A66FF130>]}
+[0m16:54:20.857253 [debug] [MainThread]: Flushing usage events
+[0m16:54:21.085085 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:55:08.689132 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A4D589010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A4B6742D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A4E1DE710>]}
+
+
+============================== 16:55:08.692613 | bf78ecfc-99ea-41dd-89ad-5526673197e5 ==============================
+[0m16:55:08.692613 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:55:08.693231 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\profiles.yml', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m16:55:08.706519 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:55:08.706968 [info ] [MainThread]: python version: 3.13.2
+[0m16:55:08.707391 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:55:08.707714 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:55:08.708052 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m16:55:08.708357 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml
+[0m16:55:08.708693 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m16:55:08.781641 [info ] [MainThread]: Configuration:
+[0m16:55:08.782195 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m16:55:08.782576 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m16:55:08.783030 [info ] [MainThread]: Required dependencies:
+[0m16:55:08.783431 [debug] [MainThread]: Executing "git --help"
+[0m16:55:08.809362 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:55:08.809834 [debug] [MainThread]: STDERR: "b''"
+[0m16:55:08.810134 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:55:08.810651 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m16:55:08.811013 [info ] [MainThread]: [31m1 check failed:[0m
+[0m16:55:08.811314 [info ] [MainThread]: dbt looked for a profiles.yml file in C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m16:55:08.811944 [debug] [MainThread]: Command `dbt debug` failed at 16:55:08.811850 after 0.28 seconds
+[0m16:55:08.812221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A4E8062C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A4E8496D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A4E537AC0>]}
+[0m16:55:08.812513 [debug] [MainThread]: Flushing usage events
+[0m16:55:09.081793 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:55:39.332063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AED28B9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AED09CC2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AED3502710>]}
+
+
+============================== 16:55:39.336479 | d202891c-7ede-41a3-b3f4-531f3711c9b6 ==============================
+[0m16:55:39.336479 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:55:39.337463 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m16:55:39.349972 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:55:39.350629 [info ] [MainThread]: python version: 3.13.2
+[0m16:55:39.351199 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:55:39.351625 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:55:39.357614 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DBT_SCHEMA'
+[0m16:55:39.358789 [debug] [MainThread]: Command `dbt debug` failed at 16:55:39.358678 after 0.17 seconds
+[0m16:55:39.359057 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AED39FF950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AED3A82E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AED3A6F130>]}
+[0m16:55:39.359334 [debug] [MainThread]: Flushing usage events
+[0m16:55:39.563974 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:56:46.815934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021625679010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216237982D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216262CE710>]}
+
+
+============================== 16:56:46.819949 | 8b5700f9-80f7-4452-b870-4604ec6387a2 ==============================
+[0m16:56:46.819949 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:56:46.820922 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:56:46.833854 [info ] [MainThread]: dbt version: 1.9.0-b3
+[0m16:56:46.834577 [info ] [MainThread]: python version: 3.13.2
+[0m16:56:46.835036 [info ] [MainThread]: python path: C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\venv\Scripts\python.exe
+[0m16:56:46.835509 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m16:56:47.211142 [info ] [MainThread]: Using profiles dir at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\
+[0m16:56:47.212084 [info ] [MainThread]: Using profiles.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\RealEstate_Project\profiles.yml
+[0m16:56:47.212601 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\sarma\OneDrive\Desktop\BootCamp\Capstone\DBT_Project\dbt_project.yml
+[0m16:56:47.214598 [info ] [MainThread]: adapter type: snowflake
+[0m16:56:47.215028 [info ] [MainThread]: adapter version: 1.8.4
+[0m16:56:47.277869 [info ] [MainThread]: Configuration:
+[0m16:56:47.279068 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:56:47.279721 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m16:56:47.280491 [info ] [MainThread]: Required dependencies:
+[0m16:56:47.281350 [debug] [MainThread]: Executing "git --help"
+[0m16:56:47.307728 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:56:47.308388 [debug] [MainThread]: STDERR: "b''"
+[0m16:56:47.308722 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:56:47.309233 [info ] [MainThread]: Connection:
+[0m16:56:47.309711 [info ] [MainThread]:   account: aab46027.us-west-2
+[0m16:56:47.310325 [info ] [MainThread]:   user: dataexpert_student
+[0m16:56:47.311210 [info ] [MainThread]:   database: DATAEXPERT_STUDENT
+[0m16:56:47.312029 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m16:56:47.312779 [info ] [MainThread]:   role: ALL_USERS_ROLE
+[0m16:56:47.313523 [info ] [MainThread]:   schema: VARUN_PROJECT
+[0m16:56:47.313838 [info ] [MainThread]:   authenticator: None
+[0m16:56:47.314295 [info ] [MainThread]:   oauth_client_id: None
+[0m16:56:47.315016 [info ] [MainThread]:   query_tag: varun_project
+[0m16:56:47.315524 [info ] [MainThread]:   client_session_keep_alive: False
+[0m16:56:47.315871 [info ] [MainThread]:   host: None
+[0m16:56:47.316155 [info ] [MainThread]:   port: None
+[0m16:56:47.316424 [info ] [MainThread]:   proxy_host: None
+[0m16:56:47.316727 [info ] [MainThread]:   proxy_port: None
+[0m16:56:47.317116 [info ] [MainThread]:   protocol: None
+[0m16:56:47.317422 [info ] [MainThread]:   connect_retries: 0
+[0m16:56:47.317879 [info ] [MainThread]:   connect_timeout: 10
+[0m16:56:47.318373 [info ] [MainThread]:   retry_on_database_errors: False
+[0m16:56:47.318849 [info ] [MainThread]:   retry_all: False
+[0m16:56:47.319297 [info ] [MainThread]:   insecure_mode: False
+[0m16:56:47.319594 [info ] [MainThread]:   reuse_connections: True
+[0m16:56:47.320080 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m16:56:47.501185 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m16:56:47.502149 [debug] [MainThread]: Using snowflake connection "debug"
+[0m16:56:47.502353 [debug] [MainThread]: On debug: select 1 as id
+[0m16:56:47.502519 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:56:48.471445 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.969 seconds
+[0m16:56:48.473037 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m16:56:48.474261 [info ] [MainThread]: [32mAll checks passed![0m
+[0m16:56:48.476007 [debug] [MainThread]: Command `dbt debug` succeeded at 16:56:48.475778 after 1.81 seconds
+[0m16:56:48.476546 [debug] [MainThread]: Connection 'debug' was left open.
+[0m16:56:48.477158 [debug] [MainThread]: On debug: Close
+[0m16:56:48.699724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216283FFE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021628530290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021628326580>]}
+[0m16:56:48.700612 [debug] [MainThread]: Flushing usage events
+[0m16:56:48.947399 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:57:58.355545 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024182E49010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024180F382D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024183AA2710>]}
+
+
+============================== 16:57:58.359133 | f7c33525-4c29-4bfa-a29e-c036fc0b03ac ==============================
+[0m16:57:58.359133 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m16:57:58.359885 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:57:58.655329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f7c33525-4c29-4bfa-a29e-c036fc0b03ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024185AEA190>]}
+[0m16:57:58.708288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f7c33525-4c29-4bfa-a29e-c036fc0b03ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024185983680>]}
+[0m16:57:58.711352 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m16:57:58.902186 [debug] [MainThread]: checksum: 5f4fde221ca8627174a0341efc73099aaec05b8546408ceed6f59b1ec0755115, vars: {}, profile: , target: , version: 1.9.0b3
+[0m16:57:58.903179 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:57:58.904312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f7c33525-4c29-4bfa-a29e-c036fc0b03ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024185992050>]}
+[0m16:58:01.008057 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.RealEstate_Project.example
+[0m16:58:01.011953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f7c33525-4c29-4bfa-a29e-c036fc0b03ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024183A88140>]}
+[0m16:58:01.092389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f7c33525-4c29-4bfa-a29e-c036fc0b03ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024185BB73F0>]}
+[0m16:58:01.093001 [info ] [MainThread]: Found 459 macros
+[0m16:58:01.093940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f7c33525-4c29-4bfa-a29e-c036fc0b03ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024185D79710>]}
+[0m16:58:01.095493 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m16:58:01.096217 [debug] [MainThread]: Command end result
+[0m16:58:01.110186 [debug] [MainThread]: Command `dbt run` succeeded at 16:58:01.110048 after 2.91 seconds
+[0m16:58:01.110503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024183E7D610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024185C1F490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024185E6AAF0>]}
+[0m16:58:01.110784 [debug] [MainThread]: Flushing usage events
+[0m16:58:01.375764 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:39:05.346823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002238E9D9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002238CAC82D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002238F622710>]}
+
+
+============================== 22:39:05.351638 | 2db80a4f-808f-4f50-a820-40898402932f ==============================
+[0m22:39:05.351638 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m22:39:05.352643 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m22:39:09.137009 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2db80a4f-808f-4f50-a820-40898402932f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223916CA190>]}
+[0m22:39:09.183027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2db80a4f-808f-4f50-a820-40898402932f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022391563680>]}
+[0m22:39:09.185425 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m22:39:09.610507 [debug] [MainThread]: checksum: 5f4fde221ca8627174a0341efc73099aaec05b8546408ceed6f59b1ec0755115, vars: {}, profile: , target: , version: 1.9.0b3
+[0m22:39:09.648679 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m22:39:09.650415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '2db80a4f-808f-4f50-a820-40898402932f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022391995350>]}
+[0m22:39:12.161149 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.RealEstate_Project.example
+[0m22:39:12.167714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2db80a4f-808f-4f50-a820-40898402932f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002238F50B2F0>]}
+[0m22:39:12.255844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2db80a4f-808f-4f50-a820-40898402932f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022391796190>]}
+[0m22:39:12.256303 [info ] [MainThread]: Found 459 macros
+[0m22:39:12.256911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2db80a4f-808f-4f50-a820-40898402932f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022391A4DCC0>]}
+[0m22:39:12.258190 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m22:39:12.259087 [debug] [MainThread]: Command end result
+[0m22:39:12.278983 [debug] [MainThread]: Command `dbt run` succeeded at 22:39:12.278781 after 7.23 seconds
+[0m22:39:12.279350 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002238F9FD610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022391A20940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022391A23EE0>]}
+[0m22:39:12.279615 [debug] [MainThread]: Flushing usage events
+[0m22:39:12.570440 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:40:56.623671 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCB249010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FC934C2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCBE92710>]}
+
+
+============================== 22:40:56.628075 | c0514d93-3616-4279-831e-170ab01f392b ==============================
+[0m22:40:56.628075 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m22:40:56.629075 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:40:56.969196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c0514d93-3616-4279-831e-170ab01f392b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCDF2A190>]}
+[0m22:40:57.011429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c0514d93-3616-4279-831e-170ab01f392b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCDDC3680>]}
+[0m22:40:57.013542 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m22:40:57.178355 [debug] [MainThread]: checksum: 5f4fde221ca8627174a0341efc73099aaec05b8546408ceed6f59b1ec0755115, vars: {}, profile: , target: , version: 1.9.0b3
+[0m22:40:57.262899 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:40:57.263431 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:40:57.263866 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.RealEstate_Project.example
+[0m22:40:57.267796 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c0514d93-3616-4279-831e-170ab01f392b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCE1F5850>]}
+[0m22:40:57.315790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c0514d93-3616-4279-831e-170ab01f392b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCBE7C140>]}
+[0m22:40:57.316258 [info ] [MainThread]: Found 459 macros
+[0m22:40:57.316904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c0514d93-3616-4279-831e-170ab01f392b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCE2C50F0>]}
+[0m22:40:57.318157 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m22:40:57.319737 [debug] [MainThread]: Command end result
+[0m22:40:57.334987 [debug] [MainThread]: Command `dbt run` succeeded at 22:40:57.334789 after 0.99 seconds
+[0m22:40:57.335389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCE2B3EE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCC26D610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FCE1E1250>]}
+[0m22:40:57.335721 [debug] [MainThread]: Flushing usage events
+[0m22:40:57.637616 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:45:14.961288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226D98C9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226D79B82D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226DA512710>]}
+
+
+============================== 22:45:14.967223 | b61df6c1-bcc4-4297-81af-07a75a337d98 ==============================
+[0m22:45:14.967223 [info ] [MainThread]: Running with dbt=1.9.0-b3
+[0m22:45:14.968334 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\sarma\\OneDrive\\Desktop\\BootCamp\\Capstone\\DBT_Project\\RealEstate_Project\\', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt build', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:45:15.299140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b61df6c1-bcc4-4297-81af-07a75a337d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226DC5FA190>]}
+[0m22:45:15.342399 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b61df6c1-bcc4-4297-81af-07a75a337d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226DC497680>]}
+[0m22:45:15.343834 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m22:45:15.505964 [debug] [MainThread]: checksum: 5f4fde221ca8627174a0341efc73099aaec05b8546408ceed6f59b1ec0755115, vars: {}, profile: , target: , version: 1.9.0b3
+[0m22:45:15.559096 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:45:15.559633 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:45:15.560129 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.RealEstate_Project.example
+[0m22:45:15.565565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b61df6c1-bcc4-4297-81af-07a75a337d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226DC8C9850>]}
+[0m22:45:15.649540 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b61df6c1-bcc4-4297-81af-07a75a337d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226DA4F8140>]}
+[0m22:45:15.649965 [info ] [MainThread]: Found 459 macros
+[0m22:45:15.651894 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m22:45:15.653856 [debug] [MainThread]: Command end result
+[0m22:45:15.669041 [debug] [MainThread]: Command `dbt build` succeeded at 22:45:15.668847 after 0.97 seconds
+[0m22:45:15.669415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226DA8C7E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226DC4FFA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226DCA1FE10>]}
+[0m22:45:15.669669 [debug] [MainThread]: Flushing usage events
+[0m22:45:15.961687 [debug] [MainThread]: An error was encountered while trying to flush usage events
