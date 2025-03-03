@@ -24,45 +24,46 @@ def snowflake_data_insert(data):
     conn = snowflake.connector.connect(**connection_params)
     cursor = conn.cursor()
     staging_table_ddl = """
-    CREATE OR REPLACE TABLE RAW_PROPERTY_LISTINGS_STAGE (
-        ID VARCHAR(16777216),
-        FORMATTED_ADDRESS VARCHAR(16777216),
-        ADDRESS_LINE1 VARCHAR(16777216),
-        ADDRESS_LINE2 VARCHAR(16777216),
-        CITY VARCHAR(16777216),
-        STATE VARCHAR(16777216),
-        ZIP_CODE VARCHAR(16777216),
-        COUNTY VARCHAR(16777216),
-        LATITUDE FLOAT,
-        LONGITUDE FLOAT,
-        PROPERTY_TYPE VARCHAR(16777216),
-        BEDROOMS NUMBER(38,0),
-        BATHROOMS NUMBER(38,0),
-        SQUARE_FOOTAGE NUMBER(38,0),
-        LOT_SIZE NUMBER(38,0),
-        YEAR_BUILT NUMBER(38,0),
-        HOA_FEE FLOAT,
-        STATUS VARCHAR(16777216),
-        PRICE FLOAT,
-        LISTING_TYPE VARCHAR(16777216),
-        LISTED_DATE TIMESTAMP_NTZ(9),
-        REMOVED_DATE TIMESTAMP_NTZ(9),
-        CREATED_DATE TIMESTAMP_NTZ(9),
-        LAST_SEEN_DATE TIMESTAMP_NTZ(9),
-        DAYS_ON_MARKET NUMBER(38,0),
-        MLS_NAME VARCHAR(16777216),
-        MLS_NUMBER VARCHAR(16777216),
-        LISTING_AGENT_NAME VARCHAR(16777216),
-        LISTING_AGENT_PHONE VARCHAR(16777216),
-        LISTING_AGENT_EMAIL VARCHAR(16777216),
-        LISTING_AGENT_WEBSITE VARCHAR(16777216),
-        LISTING_OFFICE_NAME VARCHAR(16777216),
-        LISTING_OFFICE_PHONE VARCHAR(16777216),
-        LISTING_OFFICE_EMAIL VARCHAR(16777216),
-        HISTORY VARIANT,
-        HASH_VALUE VARCHAR(64),
-        INGESTION_TIMESTAMP TIMESTAMP_NTZ(9) DEFAULT CURRENT_TIMESTAMP()
-    );
+   CREATE OR REPLACE TABLE RENTAL_PROPERTY_LISTINGS_STAGE (
+    ID VARCHAR,
+    FORMATTED_ADDRESS VARCHAR,
+    ADDRESS_LINE1 VARCHAR,
+    ADDRESS_LINE2 VARCHAR,
+    CITY VARCHAR,
+    STATE VARCHAR,
+    ZIP_CODE VARCHAR,
+    COUNTY VARCHAR,
+    LATITUDE FLOAT,
+    LONGITUDE FLOAT,
+    PROPERTY_TYPE VARCHAR,
+    BEDROOMS INT,
+    BATHROOMS FLOAT,
+    SQUARE_FOOTAGE INT,
+    LOT_SIZE INT,
+    YEAR_BUILT INT,
+    HOA_FEE FLOAT,
+    STATUS VARCHAR,
+    PRICE FLOAT,
+    LISTING_TYPE VARCHAR,
+    LISTED_DATE TIMESTAMP_NTZ,
+    REMOVED_DATE TIMESTAMP_NTZ,
+    CREATED_DATE TIMESTAMP_NTZ,
+    LAST_SEEN_DATE TIMESTAMP_NTZ,
+    DAYS_ON_MARKET INT,
+    MLS_NAME VARCHAR,
+    MLS_NUMBER VARCHAR,
+    LISTING_AGENT_NAME VARCHAR,
+    LISTING_AGENT_PHONE VARCHAR,
+    LISTING_AGENT_EMAIL VARCHAR,
+    LISTING_AGENT_WEBSITE VARCHAR,
+    LISTING_OFFICE_NAME VARCHAR,
+    LISTING_OFFICE_PHONE VARCHAR,
+    LISTING_OFFICE_EMAIL VARCHAR,
+    LISTING_OFFICE_WEBSITE VARCHAR,
+    HISTORY VARIANT,  -- JSON column to store history details
+    HASH_VALUE VARCHAR(64), -- Hash column for deduplication
+    INGESTION_TIMESTAMP TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
     """
 
     cursor.execute(staging_table_ddl)
@@ -92,18 +93,18 @@ def snowflake_data_insert(data):
                 "LONGITUDE": float(d.get("longitude", 0.0)),
                 "PROPERTY_TYPE": d.get("propertyType", ""),
                 "BEDROOMS": int(d.get("bedrooms", 0)),
-                "BATHROOMS": int(d.get("bathrooms", 0)),
+                "BATHROOMS": float(d.get("bathrooms", 0)),  # Updated to FLOAT as per schema
                 "SQUARE_FOOTAGE": int(d.get("squareFootage", 0)),
                 "LOT_SIZE": int(d.get("lotSize", 0)),
                 "YEAR_BUILT": int(d.get("yearBuilt", 0)),
-                "HOA_FEE": int(d.get("hoa", {}).get("fee", 0)),
+                "HOA_FEE": float(d.get("hoa", {}).get("fee", 0)),  # Ensuring FLOAT type
                 "STATUS": d.get("status", ""),
-                "PRICE": int(d.get("price", 0)),
+                "PRICE": float(d.get("price", 0)),  # Ensuring FLOAT type
                 "LISTING_TYPE": d.get("listingType", ""),
-                "LISTED_DATE": d.get("listedDate", None) if d.get("listedDate") not in ["Null", None] else None,
-                "REMOVED_DATE": d.get("removedDate", None) if d.get("removedDate") not in ["Null", None] else None,
-                "CREATED_DATE": d.get("createdDate", None) if d.get("createdDate") not in ["Null", None] else None,
-                "LAST_SEEN_DATE": d.get("lastSeenDate", None) if d.get("lastSeenDate") not in ["Null", None] else None,
+                "LISTED_DATE": d.get("listedDate") if d.get("listedDate") not in ["Null", None] else None,
+                "REMOVED_DATE": d.get("removedDate") if d.get("removedDate") not in ["Null", None] else None,
+                "CREATED_DATE": d.get("createdDate") if d.get("createdDate") not in ["Null", None] else None,
+                "LAST_SEEN_DATE": d.get("lastSeenDate") if d.get("lastSeenDate") not in ["Null", None] else None,
                 "DAYS_ON_MARKET": int(d.get("daysOnMarket", 0)),
                 "MLS_NAME": d.get("mlsName", ""),
                 "MLS_NUMBER": d.get("mlsNumber", ""),
@@ -114,8 +115,9 @@ def snowflake_data_insert(data):
                 "LISTING_OFFICE_NAME": d.get("listingOffice", {}).get("name", ""),
                 "LISTING_OFFICE_PHONE": d.get("listingOffice", {}).get("phone", ""),
                 "LISTING_OFFICE_EMAIL": d.get("listingOffice", {}).get("email", ""),
-                "HISTORY": json.dumps(d.get("history", {})),
-                "HASH_VALUE": md5_hash,  # Convert dict to JSON string
+                "LISTING_OFFICE_WEBSITE": d.get("listingOffice", {}).get("website", ""),
+                "HISTORY": json.dumps(d.get("history", {})),  # Convert to JSON string
+                "HASH_VALUE": md5_hash,  # Hash for deduplication
                 "INGESTION_TIMESTAMP": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S"),  # Format for Snowflake
             }
             city = row["CITY"]
@@ -123,15 +125,16 @@ def snowflake_data_insert(data):
         df = pd.DataFrame(records)
         df.columns = df.columns.str.upper()
 
-        staging_table = "RAW_PROPERTY_LISTINGS_STAGE"
-        write_pandas(conn, df, "RAW_PROPERTY_LISTINGS_STAGE", auto_create_table=False)
+        staging_table = "RENTAL_PROPERTY_LISTINGS_STAGE"
+        write_pandas(conn, df, "RENTAL_PROPERTY_LISTINGS_STAGE", auto_create_table=False)
 
         # Step 2: Merge Data from Staging Table into Main Table
         merge_query = f"""
-        MERGE INTO RAW_PROPERTY_LISTINGS AS target
-        USING RAW_PROPERTY_LISTINGS_STAGE AS source
+               MERGE INTO RENTAL_PROPERTY_LISTINGS AS target
+        USING RENTAL_PROPERTY_LISTINGS_STAGE AS source
         ON target.ID = source.ID
-        WHEN MATCHED THEN
+        -- 🔹 Update only when there is a hash difference (data has changed)
+        WHEN MATCHED AND target.HASH_VALUE <> source.HASH_VALUE THEN
             UPDATE SET 
                 target.FORMATTED_ADDRESS = source.FORMATTED_ADDRESS,
                 target.ADDRESS_LINE1 = source.ADDRESS_LINE1,
@@ -166,24 +169,32 @@ def snowflake_data_insert(data):
                 target.LISTING_OFFICE_NAME = source.LISTING_OFFICE_NAME,
                 target.LISTING_OFFICE_PHONE = source.LISTING_OFFICE_PHONE,
                 target.LISTING_OFFICE_EMAIL = source.LISTING_OFFICE_EMAIL,
+                target.LISTING_OFFICE_WEBSITE = source.LISTING_OFFICE_WEBSITE,
                 target.HISTORY = source.HISTORY,
                 target.HASH_VALUE = source.HASH_VALUE,
                 target.INGESTION_TIMESTAMP = source.INGESTION_TIMESTAMP
+        
+        -- 🔹 Insert only if the ID does not exist
         WHEN NOT MATCHED THEN
-              INSERT (
+            INSERT (
                 ID, FORMATTED_ADDRESS, ADDRESS_LINE1, ADDRESS_LINE2, CITY, STATE, ZIP_CODE, COUNTY, LATITUDE, LONGITUDE,
                 PROPERTY_TYPE, BEDROOMS, BATHROOMS, SQUARE_FOOTAGE, LOT_SIZE, YEAR_BUILT, HOA_FEE, STATUS, PRICE,
                 LISTING_TYPE, LISTED_DATE, REMOVED_DATE, CREATED_DATE, LAST_SEEN_DATE, DAYS_ON_MARKET, MLS_NAME,
                 MLS_NUMBER, LISTING_AGENT_NAME, LISTING_AGENT_PHONE, LISTING_AGENT_EMAIL, LISTING_AGENT_WEBSITE,
-                LISTING_OFFICE_NAME, LISTING_OFFICE_PHONE, LISTING_OFFICE_EMAIL, HISTORY,HASH_VALUE, INGESTION_TIMESTAMP
+                LISTING_OFFICE_NAME, LISTING_OFFICE_PHONE, LISTING_OFFICE_EMAIL, LISTING_OFFICE_WEBSITE,
+                HISTORY, HASH_VALUE, INGESTION_TIMESTAMP
             ) VALUES (
-                source.ID, source.FORMATTED_ADDRESS, source.ADDRESS_LINE1, source.ADDRESS_LINE2, source.CITY, source.STATE, source.ZIP_CODE, source.COUNTY, source.LATITUDE, source.LONGITUDE,
-                source.PROPERTY_TYPE, source.BEDROOMS, source.BATHROOMS, source.SQUARE_FOOTAGE, source.LOT_SIZE, source.YEAR_BUILT, source.HOA_FEE, source.STATUS, source.PRICE,
-                source.LISTING_TYPE, source.LISTED_DATE, source.REMOVED_DATE, source.CREATED_DATE, source.LAST_SEEN_DATE, source.DAYS_ON_MARKET, source.MLS_NAME,
-                source.MLS_NUMBER, source.LISTING_AGENT_NAME, source.LISTING_AGENT_PHONE, source.LISTING_AGENT_EMAIL, source.LISTING_AGENT_WEBSITE,
-                source.LISTING_OFFICE_NAME, source.LISTING_OFFICE_PHONE, source.LISTING_OFFICE_EMAIL, source.HISTORY, source.HASH_VALUE, source.INGESTION_TIMESTAMP
-
-            )
+                source.ID, source.FORMATTED_ADDRESS, source.ADDRESS_LINE1, source.ADDRESS_LINE2, source.CITY, source.STATE, 
+                source.ZIP_CODE, source.COUNTY, source.LATITUDE, source.LONGITUDE,
+                source.PROPERTY_TYPE, source.BEDROOMS, source.BATHROOMS, source.SQUARE_FOOTAGE, source.LOT_SIZE, 
+                source.YEAR_BUILT, source.HOA_FEE, source.STATUS, source.PRICE,
+                source.LISTING_TYPE, source.LISTED_DATE, source.REMOVED_DATE, source.CREATED_DATE, 
+                source.LAST_SEEN_DATE, source.DAYS_ON_MARKET, source.MLS_NAME,
+                source.MLS_NUMBER, source.LISTING_AGENT_NAME, source.LISTING_AGENT_PHONE, 
+                source.LISTING_AGENT_EMAIL, source.LISTING_AGENT_WEBSITE,
+                source.LISTING_OFFICE_NAME, source.LISTING_OFFICE_PHONE, source.LISTING_OFFICE_EMAIL, 
+                source.LISTING_OFFICE_WEBSITE, source.HISTORY, source.HASH_VALUE, source.INGESTION_TIMESTAMP
+            );
         """
 
         cursor = conn.cursor()
@@ -198,7 +209,7 @@ def snowflake_data_insert(data):
 
         # Log audit entry
         audit_query = """
-                INSERT INTO audit_logs (ingestion_id, source, ingestion_timestamp, record_count, status,city)
+                INSERT INTO audit_logs_rental (ingestion_id, source, ingestion_timestamp, record_count, status,city)
                 VALUES (%s, 'API', CURRENT_TIMESTAMP, %s, 'Success',%s)
             """
         cursor.execute(audit_query, (ingestion_id, len(records),city))
@@ -209,7 +220,7 @@ def snowflake_data_insert(data):
     except Exception as e:
         # Log failure
         audit_query = """
-            INSERT INTO audit_logs (ingestion_id, source, ingestion_timestamp, record_count, status, error_message,city)
+            INSERT INTO audit_logs_rental (ingestion_id, source, ingestion_timestamp, record_count, status, error_message,city)
             VALUES (%s, 'API', CURRENT_TIMESTAMP, %s, 'Failed', %s, %s)
         """
         record_count = len(records) if records else 0
@@ -247,8 +258,7 @@ def main():
                   "Prosper", "Richardson", "Royse City", "Sachse", "Saint Paul",
                   "Van Alstyne", "Weston", "Wylie"
                 ]
-
-        base_url = "https://api.rentcast.io/v1/listings/sale"
+        base_url = "https://api.rentcast.io/v1/listings/rental/long-term"
         # url = "https://api.rentcast.io/v1/listings/sale?city=Austin&state=TX&status=Active&limit=500&offset=500"
         # url  = "https://api.rentcast.io/v1/listings/sale?state=TX&status=Active&limit=500&offset=500"
 
@@ -269,9 +279,9 @@ def main():
                 'schema': 'varun_project'
             }
 
-        audit_logs = """
+        audit_logs_rental = """
                 SELECT city, SUM(record_count) AS total_records
-                FROM audit_logs
+                FROM audit_logs_rental
                 WHERE city = %s
                 GROUP BY city
                 ORDER BY total_records DESC;
@@ -279,11 +289,11 @@ def main():
         check_records = """
                         select city, record_count from (
                         SELECT city, record_count,row_number() over(partition by city order by ingestion_timestamp desc) as r
-                        FROM audit_logs) t 
+                        FROM audit_logs_rental) t 
                         where city = %s and r = 1
         """
         audit_query = """
-                      INSERT INTO audit_logs (ingestion_id, source, ingestion_timestamp, record_count, status, error_message,city)
+                      INSERT INTO audit_logs_rental (ingestion_id, source, ingestion_timestamp, record_count, status, error_message,city)
                       VALUES (%s, 'API', CURRENT_TIMESTAMP, '0', 'Failed', 'No Data available in this city',%s )
                   """
          # Pass city as a tuple
@@ -296,7 +306,7 @@ def main():
 
         results=[]
         for city in cities:
-            cursor.execute(audit_logs, (city,))
+            cursor.execute(audit_logs_rental, (city,))  # Use a list, not a tuple
             result = cursor.fetchone()
             print("I am here 1")
             print(result)

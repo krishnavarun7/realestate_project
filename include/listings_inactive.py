@@ -198,7 +198,7 @@ def snowflake_data_insert(data):
 
         # Log audit entry
         audit_query = """
-                INSERT INTO audit_logs (ingestion_id, source, ingestion_timestamp, record_count, status,city)
+                INSERT INTO audit_logs_inactive (ingestion_id, source, ingestion_timestamp, record_count, status,city)
                 VALUES (%s, 'API', CURRENT_TIMESTAMP, %s, 'Success',%s)
             """
         cursor.execute(audit_query, (ingestion_id, len(records),city))
@@ -209,7 +209,7 @@ def snowflake_data_insert(data):
     except Exception as e:
         # Log failure
         audit_query = """
-            INSERT INTO audit_logs (ingestion_id, source, ingestion_timestamp, record_count, status, error_message,city)
+            INSERT INTO audit_logs_inactive (ingestion_id, source, ingestion_timestamp, record_count, status, error_message,city)
             VALUES (%s, 'API', CURRENT_TIMESTAMP, %s, 'Failed', %s, %s)
         """
         record_count = len(records) if records else 0
@@ -269,9 +269,9 @@ def main():
                 'schema': 'varun_project'
             }
 
-        audit_logs = """
+        audit_logs_inactive = """
                 SELECT city, SUM(record_count) AS total_records
-                FROM audit_logs
+                FROM audit_logs_inactive
                 WHERE city = %s
                 GROUP BY city
                 ORDER BY total_records DESC;
@@ -279,11 +279,11 @@ def main():
         check_records = """
                         select city, record_count from (
                         SELECT city, record_count,row_number() over(partition by city order by ingestion_timestamp desc) as r
-                        FROM audit_logs) t 
+                        FROM audit_logs_inactive) t 
                         where city = %s and r = 1
         """
         audit_query = """
-                      INSERT INTO audit_logs (ingestion_id, source, ingestion_timestamp, record_count, status, error_message,city)
+                      INSERT INTO audit_logs_inactive (ingestion_id, source, ingestion_timestamp, record_count, status, error_message,city)
                       VALUES (%s, 'API', CURRENT_TIMESTAMP, '0', 'Failed', 'No Data available in this city',%s )
                   """
          # Pass city as a tuple
@@ -296,13 +296,13 @@ def main():
 
         results=[]
         for city in cities:
-            cursor.execute(audit_logs, (city,))
+            cursor.execute(audit_logs_inactive, (city,))
             result = cursor.fetchone()
             print("I am here 1")
             print(result)
             if result is None or result:
                 if result is None:
-                    url = f"{base_url}?city={city}&state=TX&status=Active&limit=500"
+                    url = f"{base_url}?city={city}&state=TX&status=Inactive&limit=500"
                     print("I am here 2")
                     response = requests.get(url, headers=headers)  # API request
                     print(response.status_code)
@@ -328,7 +328,7 @@ def main():
                         results.append({"City": result[0], "Total Records": result[1]})
                         offset = result[1]
 
-                        url = f"{base_url}?city={city}&state=TX&status=Active&limit=500&offset={offset}"
+                        url = f"{base_url}?city={city}&state=TX&status=Inactive&limit=500&offset={offset}"
                         print("I am here 3")
                         response = requests.get(url, headers=headers)  # API request
                         print(response.status_code)
