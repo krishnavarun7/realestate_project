@@ -232,7 +232,7 @@ def snowflake_data_insert(data):
         conn.close()
 
 
-def main():
+def rent_inactive_main():
     cities = [
         "Addison", "Balch Springs", "Carrollton", "Cedar Hill", "Cockrell Hill",
         "Combine", "Coppell", "Dallas", "DeSoto", "Duncanville", "Farmers Branch",
@@ -365,7 +365,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    rent_inactive_main()
     # Dynamic URL
 
 # print(data)
