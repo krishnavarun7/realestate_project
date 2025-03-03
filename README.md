@@ -1,4 +1,4 @@
-Here is a properly formatted **GitHub README** file with a **clickable table of contents** that links to respective sections:  
+
 
 **NextHome Analytics** by Sarmad Memon and Varun Vuppala
 
@@ -299,6 +299,3 @@ This project integrates disparate data sources into an analytical model, helping
 🚀 Enhance visualizations with **Tableau or Power BI dashboards**.  
 🚀 Integrate **machine learning models** for property price predictions.  
 
----
-
-This README is now fully structured and **GitHub-friendly** with clickable sections! 🚀 Let me know if you need any tweaks! 😊
