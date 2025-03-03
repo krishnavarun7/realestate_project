@@ -246,6 +246,8 @@ This project integrates disparate data sources into an analytical model, helping
 📊 **Crime Rate vs. Property Prices** *(Heatmap)*  
 📊 **An interactive calculator showing sq.footage affordability according to Income**(KPI) 
 
+
+
 ![image](https://github.com/user-attachments/assets/a06641bb-1c56-4247-a311-0fa9eb64c2c3)
 ![image](https://github.com/user-attachments/assets/55a3f858-d7ba-4527-a7b3-ca8f0cd15bfb)
 ![image](https://github.com/user-attachments/assets/7f449cb4-076c-4216-a5ea-4975dda4bfb0)
