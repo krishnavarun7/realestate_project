@@ -63,28 +63,115 @@ This project integrates disparate data sources into an analytical model, helping
 #### **Sale Listing Record Example**  
 ```json
 {
-  "id": "3821-Hargis-St,-Austin,-TX-78723",
-  "formattedAddress": "3821 Hargis St, Austin, TX 78723",
-  "city": "Austin",
-  "state": "TX",
-  "price": 899000,
-  "listingType": "Standard",
-  "listedDate": "2024-06-24T00:00:00.000Z",
-  "daysOnMarket": 99
-}
+    "id": "3821-Hargis-St,-Austin,-TX-78723",
+    "formattedAddress": "3821 Hargis St, Austin, TX 78723",
+    "addressLine1": "3821 Hargis St",
+    "addressLine2": null,
+    "city": "Austin",
+    "state": "TX",
+    "zipCode": "78723",
+    "county": "Travis",
+    "latitude": 30.290643,
+    "longitude": -97.701547,
+    "propertyType": "Single Family",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "squareFootage": 2345,
+    "lotSize": 3284,
+    "yearBuilt": 2008,
+    "hoa": {
+      "fee": 65
+    },
+    "status": "Active",
+    "price": 899000,
+    "listingType": "Standard",
+    "listedDate": "2024-06-24T00:00:00.000Z",
+    "removedDate": null,
+    "createdDate": "2021-06-25T00:00:00.000Z",
+    "lastSeenDate": "2024-09-30T13:11:47.157Z",
+    "daysOnMarket": 99,
+    "mlsName": "UnlockMLS",
+    "mlsNumber": "5519228",
+    "listingAgent": {
+      "name": "Jennifer Welch",
+      "phone": "5124313110",
+      "email": "jennifer@gottesmanresidential.com",
+      "website": "https://www.gottesmanresidential.com"
+    },
+    "listingOffice": {
+      "name": "Gottesman Residential R.E.",
+      "phone": "5124512422",
+      "email": "nataliem@gottesmanresidential.com",
+      "website": "https://www.gottesmanresidential.com"
+    },
+    "history": {
+      "2024-06-24": {
+        "event": "Sale Listing",
+        "price": 899000,
+        "listingType": "Standard",
+        "listedDate": "2024-06-24T00:00:00.000Z",
+        "removedDate": null,
+        "daysOnMarket": 99
+      }
+    }
+  }
 ```
 
 #### **Rental Listing Record Example**  
 ```json
 {
-  "id": "2005-Arborside-Dr,-Austin,-TX-78754",
-  "formattedAddress": "2005 Arborside Dr, Austin, TX 78754",
-  "city": "Austin",
-  "state": "TX",
-  "price": 2200,
-  "listedDate": "2024-09-18T00:00:00.000Z",
-  "daysOnMarket": 13
-}
+    "id": "2005-Arborside-Dr,-Austin,-TX-78754",
+    "formattedAddress": "2005 Arborside Dr, Austin, TX 78754",
+    "addressLine1": "2005 Arborside Dr",
+    "addressLine2": null,
+    "city": "Austin",
+    "state": "TX",
+    "zipCode": "78754",
+    "county": "Travis",
+    "latitude": 30.35837,
+    "longitude": -97.66508,
+    "propertyType": "Single Family",
+    "bedrooms": 3,
+    "bathrooms": 2.5,
+    "squareFootage": 1681,
+    "lotSize": 4360,
+    "yearBuilt": 2019,
+    "hoa": {
+      "fee": 45
+    },
+    "status": "Active",
+    "price": 2200,
+    "listingType": "Standard",
+    "listedDate": "2024-09-18T00:00:00.000Z",
+    "removedDate": null,
+    "createdDate": "2024-09-19T00:00:00.000Z",
+    "lastSeenDate": "2024-09-30T03:49:20.620Z",
+    "daysOnMarket": 13,
+    "mlsName": "CentralTexas",
+    "mlsNumber": "556965",
+    "listingAgent": {
+      "name": "Zachary Barton",
+      "phone": "5129948203",
+      "email": "zak-barton@realtytexas.com",
+      "website": "https://zak-barton.realtytexas.homes"
+    },
+    "listingOffice": {
+      "name": "Realty Texas",
+      "phone": "5124765348",
+      "email": "sales@realtytexas.com",
+      "website": "https://www.realtytexas.com"
+    },
+    "history": {
+      "2024-09-18": {
+        "event": "Rental Listing",
+        "price": 2200,
+        "listingType": "Standard",
+        "listedDate": "2024-09-18T00:00:00.000Z",
+        "removedDate": null,
+        "daysOnMarket": 13
+      }
+    }
+  }
 ```
 
 ### **2️⃣ County-Level Economic Data (CSV Format)**  
