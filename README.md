@@ -1,6 +1,11 @@
 Here is a properly formatted **GitHub README** file with a **clickable table of contents** that links to respective sections:  
 
----
+**NextHome Analytics** by Sarmad Memon and Varun Vuppala
+
+**Purpose of project:** 
+
+We are developing a **comprehensive, all-in-one** dashboard that integrates **real estate, crime, and financial** data for the North Dallas region. The dashboard allows users to input 
+various factors and receive insights to make **informed decisions** when renting or buying a property. 
 
 # **Real Estate Data Pipeline with Airflow, Snowflake, and dbt**  
 
@@ -43,14 +48,17 @@ This project integrates disparate data sources into an analytical model, helping
 
 ## **📌 KPI and Use Cases**  
 
-### **Key Performance Indicators (KPIs)**  
-📌 **Average property price** by county and state  
-📌 **Crime rate impact** on property prices  
-📌 **Days on market** for property listings  
+### **Key Performance Indicators (KPIs)** 
+📌 **Average property price** by county and city
+📌 **Days on market** for property listings 
+📌 **Crime impact** on property prices  
 📌 **Rental price trends** over time  
+📌 **Agent performance**
+📌 **GDP growth %**
 
 ### **Use Cases**  
-✅ Investors analyze **price trends**.  
+✅ Buyers to assess their affordability by **Average property price**, **estimated home cost** and **average household income**.
+✅ Investors analyze **price trends** and **GDP growth**.
 ✅ Policymakers assess **crime impact** on real estate.  
 ✅ Buyers compare **price variations** across regions.  
 ✅ Market analysts optimize **rental pricing**.  
@@ -204,11 +212,12 @@ This project integrates disparate data sources into an analytical model, helping
 |------------------------|----------------------------------------------|
 | **Astronomer Cloud**   | Deploys Airflow DAGs in the cloud           |
 | **Apache Airflow**     | Orchestrates ETL pipeline                   |
-| **Python**            | Extracts and processes data                  |
-| **Snowflake**         | Stores the raw data and dimensional model    |
-| **dbt**               | Cleans, transforms, and models data          |
-| **SQL**               | Loads and queries structured data            |
-| **APIs (JSON)**       | Fetches rental data dynamically              |
+| **Python**             | Extracts and processes data                  |
+| **Snowflake**          | Stores the raw data and dimensional model    |
+| **dbt**                | Cleans, transforms, and models data          |
+| **SQL**                | Loads and queries structured data            |
+| **APIs (JSON)**        | Fetches rental data dynamically              |
+| **PowerBI**            | Visualize our Business Case  
 
 ---
 
@@ -217,7 +226,7 @@ This project integrates disparate data sources into an analytical model, helping
 ✔ **Snowflake:** Cloud-native, scalable for analytical workloads.  
 ✔ **dbt:** Enables modular data transformations and quality testing.  
 ✔ **Python:** Flexible for API extraction and data processing.  
-
+✔ **PowerBI:** Mature tool to visualize complex metrics with DAX. 
 ---
 
 ## **📌 Architecture**  
@@ -230,10 +239,17 @@ This project integrates disparate data sources into an analytical model, helping
 ---
 
 ## **📌 KPI Visualizations**  
+📊 **An interactive map plotting property locations by latitude and longitude**  *(ArcGIS)*
+📊 **Days on Market for Property Listings** *(Bar Chart)* 
+📊 **Average Property Prices for Property Listings** *(Bar Chart)* 
+📊 **Top agents in North Dallas** *(Table)*
 📊 **Crime Rate vs. Property Prices** *(Heatmap)*  
-📊 **Rental Price Trends Over Time** *(Line Chart)*  
-📊 **Days on Market for Property Listings** *(Histogram)*  
-📊 **Property Price Distribution by County** *(Bar Chart)*  
+📊 **An interactive calculator showing sq.footage affordability according to Income**(KPI) 
+
+![image](https://github.com/user-attachments/assets/a06641bb-1c56-4247-a311-0fa9eb64c2c3)
+![image](https://github.com/user-attachments/assets/55a3f858-d7ba-4527-a7b3-ca8f0cd15bfb)
+![image](https://github.com/user-attachments/assets/7f449cb4-076c-4216-a5ea-4975dda4bfb0)
+![image](https://github.com/user-attachments/assets/491bb401-1989-4002-b8c8-3bfbaf40cf02)
 
 ---
 
