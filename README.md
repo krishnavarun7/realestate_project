@@ -221,6 +221,9 @@ This project integrates disparate data sources into an analytical model, helping
 
 ---
 
+<img width="965" alt="Screenshot 2025-03-03 at 12 42 34 AM" src="https://github.com/user-attachments/assets/07f705ed-1177-4867-a9ff-37d025fd662e" />
+
+
 ## **📌 Why I Used These Technologies**  
 ✔ **Airflow (via Astronomer Cloud):** Cloud-based orchestration for scheduled workflows.  
 ✔ **Snowflake:** Cloud-native, scalable for analytical workloads.  
